@@ -1,0 +1,81 @@
+.top-accounts {
+  -webkit-margin-before: calc(var(--gap-spacing) * 1.5);
+          margin-block-start: calc(var(--gap-spacing) * 1.5);
+  h3 {
+    margin-bottom: var(--gap-spacing);
+    padding-left: calc(var(--gap-spacing) * 1.5);
+  }
+  .top-accounts-list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    overflow-y: auto;
+  }
+  li {
+    flex: 1 0 40%;
+    margin-inline: calc(0.5 * var(--gap-spacing));
+    margin-bottom: calc(2 * var(--gap-spacing));
+    border-radius: var(--border-radius);
+    background-color: var(--clr-neutral-900);
+    &:first-of-type {
+      margin-left: var(--gap-spacing);
+    }
+    &:last-of-type {
+      margin-right: var(--gap-spacing);
+    }
+  }
+  .top-account-item {
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    color: var(--clr-neutral-100);
+    border-radius: var(--border-radius);
+    position: relative;
+    box-shadow: 0 10px 20px hsla(var(--clr-primary-400-value), 0.5);
+    z-index: 1;
+    transition: all 200ms ease-out;
+    position: relative;
+    &:hover {
+      padding-bottom: 25%;
+      .img-bg {
+        opacity: 0.7;
+      }
+    }
+    .img-bg {
+      position: absolute;
+      inset: 0;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: var(--border-radius);
+      z-index: -1;
+      transition: all 200ms ease-out;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-image: linear-gradient(
+          to bottom,
+          hsla(var(--clr-neutral-900-value), 0),
+          hsla(var(--clr-neutral-900-value), 0.9)
+        );
+        border-bottom-left-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+        z-index: -1;
+      }
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}

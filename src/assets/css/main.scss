@@ -1,0 +1,123 @@
+@use './variables';
+@use './navigation';
+@use './main-content';
+@use './aside';
+@use './components/search-box';
+@use './components/profile-data';
+@use './components/_statistics';
+@use './components/post-now';
+@use './components/top-posts';
+@use './components/linked-accounts';
+@use './components/popular-account';
+@use './components/recomended-accounts';
+@use './components/top-accounts';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+}
+
+body {
+  font-family: 'proxima-nova', sans-serif;
+  background-image: linear-gradient(
+    to top right,
+    #bfbcfb,
+    #c4d1f1,
+    #c4d1f1,
+    #bfbcfb
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.title-1 {
+  font-family: lora, serif;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--clr-neutral-900);
+}
+
+#app {
+}
+
+.main-container {
+  display: grid;
+  grid-template-rows: auto 70px;
+  grid-template-areas:
+    'main'
+    'nav';
+  max-width: 1460px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+}
+.main-wrapper {
+  grid-area: main;
+  padding: var(--gap-spacing);
+  background-color: var(--clr-secondary-200);
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (min-width: 576px) {
+}
+@media screen and (min-width: 768px) {
+  .main-container {
+    grid-template-rows: auto;
+    grid-template-columns: 70px auto;
+    grid-template-areas: 'nav main-content';
+    overflow-y: auto;
+  }
+  .main-wrapper {
+    grid-area: main-content;
+    height: 100%;
+    z-index: unset;
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      background-color: inherit;
+      height: 100%;
+      width: calc(var(--nav-width) / 2 + 3px);
+    }
+    &::before {
+      left: calc((var(--nav-width) / 2) * -1);
+      content: '';
+    }
+  }
+}
+@media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 1200px) {
+  .main-wrapper {
+    display: grid;
+    grid-area: main-content;
+    grid-template-columns: auto minmax(250px, 415px);
+    grid-template-areas: 'main aside';
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+// X-Small 	 	<576px
+// Small 	 	≥576px
+// Medium 	 	≥768px
+// Large 	 	≥992px
+// Extra  	xl 	≥1200px
+// Extra extra large 	 	≥1400px
+
+// @media screen and (min-width: 576px) {
+// }
+// @media screen and (min-width: 768px) {
+// }
+// @media screen and (min-width: 992px) {
+// }
+// @media screen and (min-width: 1200px) {
+// }

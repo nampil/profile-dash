@@ -1,0 +1,33 @@
+.linked-accounts {
+  padding: 1.5rem;
+  h3 {
+    margin-bottom: var(--gap-spacing);
+  }
+  .accounts-links {
+    display: flex;
+    align-items: center;
+
+    .account-link {
+      margin-right: var(--gap-spacing);
+      a {
+        color: var(--clr-primary-400);
+        transition: color 100ms ease-out;
+        &:hover {
+          color: var(--clr-accent-400);
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 576px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    .accounts-links {
+      justify-content: space-between;
+    }
+  }
+  @media screen and (min-width: 992px) {
+  }
+  @media screen and (min-width: 1200px) {
+  }
+}

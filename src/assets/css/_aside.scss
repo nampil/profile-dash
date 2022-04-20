@@ -1,0 +1,22 @@
+aside {
+  background-color: var(--clr-neutral-100);
+  border-radius: 40px 40px 40px 0;
+
+  margin-bottom: 70px;
+  @media screen and (min-width: 576px) {
+  }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    padding-top: 1rem;
+  }
+  @media screen and (min-width: 992px) {
+  }
+  @media screen and (min-width: 1200px) {
+    grid-area: aside;
+    height: 100vh;
+    overflow-y: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+}

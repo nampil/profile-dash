@@ -1,0 +1,101 @@
+$colors: (
+  neutrals: (
+    100: (
+      h: 0,
+      s: 0%,
+      l: 100%,
+      a: 1,
+    ),
+    300: (
+      h: 228,
+      s: 71%,
+      l: 97%,
+      a: 1,
+    ),
+    700: (
+      h: 225,
+      s: 33%,
+      l: 63%,
+      a: 1,
+    ),
+    900: (
+      h: 225,
+      s: 32%,
+      l: 21%,
+      a: 1,
+    ),
+  ),
+  primary: (
+    400: (
+      h: 235,
+      s: 91%,
+      l: 73%,
+      a: 1,
+    ),
+  ),
+  secondary: (
+    200: (
+      h: 219,
+      s: 71%,
+      l: 91%,
+      a: 1,
+    ),
+  ),
+  accent: (
+    400: (
+      h: 54,
+      s: 91%,
+      l: 58%,
+      a: 1,
+    ),
+  ),
+  accentalt: (
+    400: (
+      h: 313,
+      s: 88%,
+      l: 87%,
+      a: 1,
+    ),
+    200: (
+      h: 280,
+      s: 95%,
+      l: 91%,
+      a: 1,
+    ),
+  ),
+);
+
+:root {
+  @each $color, $shades in $colors {
+    @each $shade, $parts in $shades {
+      @each $part, $value in $parts {
+        --clr-#{$color}-#{$shade}-#{$part}: #{$value};
+      }
+    }
+  }
+  --clr-neutral-100-value: 225, 0%, 100%;
+  --clr-neutral-300-value: 225, 71%, 97%;
+  --clr-neutral-700-value: 225, 33%, 63%;
+  --clr-neutral-900-value: 225, 32%, 21%;
+
+  --clr-primary-400-value: 235, 91%, 73%;
+  --clr-secondary-200-value: 219, 71%, 91%;
+  --clr-accent-400-value: 54, 91%, 58%;
+  --clr-accentalt-400-value: 313, 88%, 87%;
+  --clr-accentalt-200-value: 280, 95%, 91%;
+
+  --clr-neutral-100: hsl(225, 0%, 100%);
+  --clr-neutral-300: hsl(225, 71%, 97%);
+  --clr-neutral-700: hsl(225, 33%, 63%);
+  --clr-neutral-900: hsl(225, 32%, 21%);
+
+  --clr-primary-400: hsl(235, 91%, 73%);
+  --clr-secondary-200: hsl(219, 71%, 91%);
+  --clr-accent-400: hsl(54, 91%, 58%);
+  --clr-accentalt-400: hsl(313, 88%, 87%);
+  --clr-accentalt-200: hsl(280, 95%, 91%);
+
+  --nav-width: 70px;
+  --gap-spacing: 20px;
+  --border-radius: 37px;
+}
